@@ -16,4 +16,4 @@ Since it only tests 600M per instance, it is not designed to find stuck bits, th
 My personal favourite concurrent test is y-cruncher with N32 and HNT tests across 6-10 physical cores. These tests failed within 4-5 seconds where other tests would take 30-50 seconds to fail under the same configuration.
 Running concurrent stress tests puts specific stress on the memory controller that can make both or either of the tests fail when they otherwise wouldn't.
 
-Compiling LLVM with Clang is another great stress test. 
+Compiling LLVM with Clang is another great stress test (but it won't tell you which core segfaulted if the CPU is unstable). 
