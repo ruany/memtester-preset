@@ -17,3 +17,5 @@ My personal favourite concurrent test is y-cruncher with N32 and HNT tests acros
 Running concurrent stress tests puts specific stress on the memory controller that can make both or either of the tests fail when they otherwise wouldn't.
 
 Compiling LLVM with Clang is another great stress test (but it won't tell you which core segfaulted if the CPU is unstable). 
+
+* If y-cruncher N32 or HNT tests fail consistently within ~5 seconds each time, you definitely have memory instability. If it takes longer to fail, and specific cores fail more frequently than others, you probably have memory controller (FCLK) instability.
