@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eux
 
 FAIL_MARKER="/tmp/memtest_fail"
@@ -18,16 +18,17 @@ fail_check() {
 
 test_tCL_Hammer() {
     # Test only Bit Flip and Walking Zeroes
-    for i in {1..32}; do
+    i=0
+    while :; do
         fail_check
-        echo "Pass $i:"
+        echo "Pass $[++i]:"
         rand=$(shuf -i0-1 -n1)
         if [ $rand = 0 ]; then
             MEMTESTER_TEST_MASK=4097
         else
             MEMTESTER_TEST_MASK=16385
         fi
-        MEMTESTER_TEST_MASK="$MEMTESTER_TEST_MASK" memtester 600M 1 || fail
+        MEMTESTER_TEST_MASK="$MEMTESTER_TEST_MASK" memtester 1200M 1 || fail
     done
 }
 
@@ -39,9 +40,10 @@ test_tCL_Hammer() {
 # 32769: 8-bit Writes
 # 65537: 16-bit Writes
 test_all() {
-    for i in {1..6}; do
+    i=0
+    while :; do
         fail_check
-        echo "Pass $i:"
+        echo "Pass $[++i]:"
         #memtester 1G 1 || fail
         memtester 2G 1 || fail
         #memtester 400M 1 || fail

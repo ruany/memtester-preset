@@ -5,7 +5,7 @@ This script only runs the tests which I've found to have the highest failure rat
 
 Based on my own tests, this script tends to report failure within under 5 seconds on highly unstable memory, and under 5 minutes for slightly unstable memory.
 
-Since it only tests 600M per instance, it is not designed to find stuck bits, though it may find them by accident.
+Since it only tests 1200M per instance, it is not designed to find stuck bits, though it may find them by accident.
 
 # Tips
 * Obviously make backups before testing in userspace.
