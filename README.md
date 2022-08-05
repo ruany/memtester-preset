@@ -18,4 +18,4 @@ Running concurrent stress tests puts specific stress on the memory controller th
 
 Compiling LLVM with Clang is another great stress test (but it won't tell you which core segfaulted if the CPU is unstable). 
 
-* If y-cruncher N32 or HNT tests fail consistently within ~5 seconds each time, you definitely have memory instability. If it takes longer to fail, and specific cores fail more frequently than others, you probably have memory controller (FCLK) instability.
+* If y-cruncher N32 or HNT tests fail consistently within ~5 seconds each time, you definitely have memory instability. If it takes longer to fail (60-120 seconds), and specific cores fail more frequently than others, you probably have memory controller (FCLK) instability.
